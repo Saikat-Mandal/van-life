@@ -8,7 +8,7 @@ function About() {
       <Navbar />
       <div className=" min-h-screen bg-orange-50">
         <img src={img} alt="vam" />
-        <div className=" p-4">
+        <div className=" p-4 text-center">
           <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>
           <p>
             Our mission is to enliven your road trip with the perfect travel van
