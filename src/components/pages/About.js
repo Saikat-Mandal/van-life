@@ -6,8 +6,8 @@ function About() {
   return (
     <>
       <Navbar />
-      <div className=" min-h-screen bg-orange-50">
-        <img src={img} alt="vam" />
+      <div className=" min-h-screen bg-orange-50 md:flex md:flex-col justify-center items-center">
+        <img src={img} alt="vam" className=" md:w-1/2 md:rounded-3xl" />
         <div className=" p-4 text-center">
           <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>
           <p>

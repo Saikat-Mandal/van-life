@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../UiComponents/Navbar";
 import "./server.js";
 import Footer from "../UiComponents/Footer";
@@ -12,7 +13,7 @@ function Vans() {
       .then((data) => setArray(data.vans));
   }, []);
 
-  console.log(array);
+  // console.log(array);
   return (
     <>
       <Navbar />
@@ -30,16 +31,22 @@ function Vans() {
         </div>
         <div className=" my-grid">
           {array.map((item) => (
-            <div key={item.id}>
-              <img className=" rounded-md" src={item.imageUrl} alt="van-img" />
-              <div className=" flex items-center justify-between font-bold">
-                <p>{item.name}</p>
-                <p>${item.price}</p>
+            <Link to={`/vans/${item.id}`}>
+              <div key={item.id}>
+                <img
+                  className=" rounded-md"
+                  src={item.imageUrl}
+                  alt="van-img"
+                />
+                <div className=" flex items-center justify-between font-bold py-4">
+                  <p>{item.name}</p>
+                  <p>${item.price}</p>
+                </div>
+                <div className={`van-type ${item.type} selected`}>
+                  {item.type}
+                </div>
               </div>
-              <div className={`van-type ${item.type} selected`}>
-                {item.type}
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
