@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../UiComponents/Navbar";
 import "./server.js";
-import Footer from "../UiComponents/Footer";
 function Vans() {
   // state for vans cards
   const [array, setArray] = useState([]);
@@ -16,7 +14,7 @@ function Vans() {
   // console.log(array);
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className=" bg-orange-50 min-h-screen">
         <h1 className=" font-extrabold text-3xl md:text-5xl text-center py-6">
           Explore our van options
@@ -50,7 +48,6 @@ function Vans() {
           ))}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -1,11 +1,9 @@
 import React from "react";
-import Navbar from "../UiComponents/Navbar";
-import Footer from "../UiComponents/Footer";
 import img from "../assets/homeImg.png";
 function About() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className=" min-h-screen bg-orange-50 md:flex md:flex-col justify-center items-center">
         <img src={img} alt="vam" className=" md:w-1/2 md:rounded-3xl" />
         <div className=" p-4 text-center">
@@ -29,7 +27,6 @@ function About() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

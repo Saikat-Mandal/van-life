@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../UiComponents/Navbar";
-import Footer from "../UiComponents/Footer";
 import { useParams } from "react-router-dom";
 function VansDetail() {
   const params = useParams();
@@ -16,7 +14,7 @@ function VansDetail() {
   console.log(params);
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className=" min-h-screen flex justify-center items-center">
         {van ? (
           <div className="p-6 flex flex-col md:max-w-screen-lg">
@@ -33,7 +31,6 @@ function VansDetail() {
           <h1>Loading...</h1>
         )}
       </div>
-      <Footer />
     </>
   );
 }

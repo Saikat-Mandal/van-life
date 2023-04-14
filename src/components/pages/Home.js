@@ -1,12 +1,9 @@
 import React from "react";
-
 import "./home.css";
-import Navbar from "../UiComponents/Navbar";
-import Footer from "../UiComponents/Footer";
 function Home() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <main className="justify-center items-center flex">
         <div className="text-white w-80 md:w-6/12 flex flex-col md:justify-center md:items-center gap-8">
@@ -22,7 +19,6 @@ function Home() {
           </button>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
