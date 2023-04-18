@@ -8,25 +8,25 @@ function HostNavbar() {
         <NavLink
           className={({ isActive }) => (isActive ? "active-link-host" : null)}
           end
-          to="/host"
+          to="."
         >
           Dashboard
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? "active-link-host" : null)}
-          to="/host/reviews"
+          to="reviews"
         >
           Reviews
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? "active-link-host" : null)}
-          to="/host/income"
+          to="income"
         >
           income
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? "active-link-host" : null)}
-          to="/host/vans"
+          to="vans"
         >
           vans
         </NavLink>

@@ -6,24 +6,22 @@ function HostVans() {
   const [array, setArray] = useState([]);
 
   useEffect(() => {
-    fetch("/api/vans")
+    fetch("/api/host/vans")
       .then((res) => res.json())
       .then((data) => setArray(data.vans));
   }, []);
+
   return (
     <div className=" min-h-screen p-6">
       <h1 className=" text-3xl">Your listed vans</h1>
-      <div className=" my-grid">
-        {array.map((item) => (
-          <Link to={`/host/vans/${item.id}`}>
-            <div key={item.id}>
-              <img className=" rounded-md" src={item.imageUrl} alt="van-img" />
-              <div className=" flex items-center justify-between font-bold py-4">
-                <p>{item.name}</p>
-                <p>${item.price}</p>
-              </div>
-              <div className={`van-type ${item.type} selected`}>
-                {item.type}
+      <div className="py-6 flex flex-col md:items-center gap-y-4 ">
+        {array.map((van) => (
+          <Link to={`/host/vans/${van.id}`}>
+            <div className="flex md:flex-col gap-x-4 bg-yellow-100 p-4 rounded-2xl">
+              <img className=" w-12 md:w-60" src={van.imageUrl} alt="van-img" />
+              <div>
+                <h1 className="font-semibold">{van.name}</h1>
+                <p>${van.price}/day</p>
               </div>
             </div>
           </Link>
