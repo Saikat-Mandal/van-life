@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 function VansDetail() {
   const params = useParams();
 
@@ -11,13 +11,20 @@ function VansDetail() {
       .then((data) => setVan(data.vans));
   }, [params.id]);
 
-  console.log(params);
+  const location = useLocation();
+
+  const search = location.state?.search || "";
+  const type = location.state?.type || "all";
+
   return (
     <>
       {/* <Navbar /> */}
       <div className=" min-h-screen flex justify-center items-center">
         {van ? (
           <div className="p-6 flex flex-col md:max-w-screen-lg">
+            <Link className=" underline" to={`..${search}`} relative="path">
+              back to {type} vans
+            </Link>
             <img src={van.imageUrl} alt="van-img" className=" py-4" />
             <div className={`van-type ${van.type} selected`}>{van.type}</div>
             <h1 className="py-4">{van.name}</h1>

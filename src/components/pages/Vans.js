@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import "./server.js";
-import { type } from "@testing-library/user-event/dist/type/index.js";
 function Vans() {
   // state for vans cards
   const [array, setArray] = useState([]);
@@ -34,30 +33,36 @@ function Vans() {
         </h1>
         <div className=" flex items-start justify-center">
           <div className="flex gap-x-3 items-center cursor-pointer">
-            <Link
-              to="?type=simple"
+            <button
+              onClick={() => setUseParams({ type: "simple" })}
               className=" px-4 py-2 rounded-full bg-orange-100"
             >
               Simple
-            </Link>
-            <Link
-              to="?type=luxury"
+            </button>
+            <button
+              onClick={() => setUseParams({ type: "luxury" })}
               className=" px-4 py-2 rounded-full bg-orange-100"
             >
               Luxury
-            </Link>
-            <Link
-              to="?type=rugged"
+            </button>
+            <button
+              onClick={() => setUseParams({ type: "rugged" })}
               className=" px-4 py-2 rounded-full bg-orange-100"
             >
               Rugged
-            </Link>
-            <Link to=".">Clear filters</Link>
+            </button>
+            <button onClick={() => setUseParams({})}>Clear filters</button>
           </div>
         </div>
         <div className=" my-grid">
           {newVansArray.map((item) => (
-            <Link to={`/vans/${item.id}`}>
+            <Link
+              to={item.id}
+              state={{
+                search: `?${searchParams.toString()}`,
+                type: typeFilter,
+              }}
+            >
               <div key={item.id}>
                 <img
                   className=" rounded-md"
